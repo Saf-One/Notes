@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Repository - Home</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        
+        h1 {
+            padding-bottom: 0.3em;
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        h2 {
+            padding-bottom: 0.3em;
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #dfe2e5;
+        }
+        
+        th {
+            background-color: #f6f8fa;
+            text-align: left;
+        }
+        
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: rgba(27, 31, 35, 0.05);
+            border-radius: 3px;
+        }
+        
+        #content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+        
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #6a737d;
+        }
+        
+        .update-info {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f1f8ff;
+            border-left: solid 4px #0366d6;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <!-- Content will be loaded here from Home.md -->
+        <div class="loading">Loading...</div>
+    </div>
+
+    <footer>
+        &copy; 2024 Notes Repository - <a href="https://github.com/Saf-One/Notes" target="_blank">GitHub</a> - Last updated: <span id="last-update"></span>
+    </footer>
+
+    <script>
+        // Function to fetch and render markdown
+        async function loadContent() {
+            try {
+                const response = await fetch('Home.md');
+                if (!response.ok) {
+                    throw new Error(`Failed to load content: ${response.status}`);
+                }
+
+                const text = await response.text();
+
+                // This is a simple markdown to HTML converter
+                // In a real application, you'd use a proper markdown library
+                const html = convertMarkdownToHTML(text);
+
+                document.getElementById('content').innerHTML = html;
+
+                // Update last updated timestamp
+                const now = new Date();
+                document.getElementById('last-update').textContent = now.toLocaleDateString();
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="update-info">
+                        <p>Error loading content: ${error.message}</p>
+                        <p>Please check your connection and try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Simple markdown to HTML converter
+        function convertMarkdownToHTML(markdown) {
+            // Headers
+            markdown = markdown.replace(/^# (.*$)/gm, '<h1>$1</h1>');
+            markdown = markdown.replace(/^## (.*$)/gm, '<h2>$1</h2>');
+            markdown = markdown.replace(/^### (.*$)/gm, '<h3>$1</h3>');
+
+            // Links
+            markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+            // Bold
+            markdown = markdown.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+            // Italic
+            markdown = markdown.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+            // Lists
+            markdown = markdown.replace(/^\s*-\s*(.*)/gm, '<li>$1</li>');
+            markdown = markdown.replace(/<li>(.*)<\/li>/g, '<ul><li>$1</li></ul>');
+            markdown = markdown.replace(/<\/ul>\s*<ul>/g, '');
+
+            // Paragraphs
+            markdown = markdown.replace(/^(?!<[hou]).+$/gm, '<p>$&</p>');
+
+            // Clean up extra paragraphs
+            markdown = markdown.replace(/<p><\/p>/g, '');
+
+            return markdown;
+        }
+
+        // Call the function when page loads
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+
+    <!-- Auto-update script -->
+    <script src="auto_update.js"></script>
+</body>
+
+</html>
