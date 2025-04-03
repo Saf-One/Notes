@@ -42,17 +42,3 @@ This repository includes an automatic update system that keeps cloned repositori
 3. Upon confirmation, the system automatically pulls the latest versions of all files
 4. The page reloads with the updated content
 
-### For Contributors
-
-To set up the auto-update system in your cloned repository:
-
-1. Serve the repository through a local web server (required for service workers)
-2. Open the repository using the `index.html` file rather than directly accessing the markdown files
-3. Updates will be checked automatically every 24 hours
-
-## Future Plans
-
-1. Add more topics (Java Core, Design Patterns, Data Structures, etc.)
-2. Implement automatic cross-referencing between related topics
-3. Add diagrams and visualizations
-4. Develop a search functionality
