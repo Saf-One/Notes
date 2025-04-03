@@ -4,7 +4,7 @@ A comprehensive, organized collection of study notes on various technical topics
 
 ## Overview
 
-This repository contains structured study notes on various technical topics, organized in a hierarchical system with consistent formatting and navigation. The first topic covered is the Java Collections Framework.
+This repository contains structured study notes on various technical topics, organized in a hierarchical system with consistent formatting and navigation. The notes cover programming frameworks, libraries, and concepts.
 
 ## Features
 
@@ -20,6 +20,12 @@ This repository contains structured study notes on various technical topics, org
   - Set implementations
   - Utility classes (Arrays)
   - Java Cursors (Enumeration, Iterator, ListIterator)
+
+- **Spring Boot Framework**
+  - Core features and concepts
+  - Annotations and components
+  - Application architecture
+  - Comparison with traditional Spring
 
 ## How to Use
 

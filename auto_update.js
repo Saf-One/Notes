@@ -3,6 +3,7 @@
 /**
  * This script checks for updates in the Notes repository when the Home page is accessed.
  * It compares the local version with the remote version and pulls updates if needed.
+ * It also maintains navigation links across all documents.
  */
 
 (function() {
@@ -12,6 +13,13 @@
     const VERSION_STORAGE_KEY = 'notes_repo_version';
     const LAST_CHECK_KEY = 'notes_repo_last_check';
     const CHECK_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+    // Topic directories configuration
+    const topicDirectories = [
+        'Collection framework',
+        'Spring Boot'
+        // New topics will be added here
+    ];
 
     // Check if we're running in a browser environment
     if (typeof window === 'undefined' || !window.localStorage) {
@@ -89,9 +97,12 @@
                 'Home.md',
                 'README.md',
                 'note_processor_rules.md',
+                'update_navigation.js',
                 'Collection framework/Home.md',
                 'Collection framework/Java_Collections_Framework.md',
-                'Collection framework/Java_Cursors.md'
+                'Collection framework/Java_Cursors.md',
+                'Spring Boot/Home.md',
+                'Spring Boot/Spring_Boot_Framework.md'
             ];
 
             // We'll use a service worker or similar approach to cache the files
@@ -106,6 +117,9 @@
                 };
 
                 registration.active.postMessage(updateMessage);
+
+                // Update navigation links
+                await updateNavigationLinks();
 
                 // Save the new version
                 localStorage.setItem(VERSION_STORAGE_KEY, newVersion);
@@ -135,6 +149,32 @@
                     updateNotice.style.display = 'none';
                 }, 3000);
             }
+        }
+    }
+
+    // Function to update navigation links
+    async function updateNavigationLinks() {
+        try {
+            console.log('Updating navigation links...');
+
+            // Load the navigation update script dynamically
+            const navigationScript = document.createElement('script');
+            navigationScript.src = 'update_navigation.js';
+            document.head.appendChild(navigationScript);
+
+            // Wait for script to load
+            await new Promise(resolve => {
+                navigationScript.onload = resolve;
+            });
+
+            // Call the navigation update function
+            if (window.updateAllNavigationLinks) {
+                window.updateAllNavigationLinks();
+            }
+
+            console.log('Navigation links updated successfully');
+        } catch (error) {
+            console.error('Error updating navigation links:', error);
         }
     }
 

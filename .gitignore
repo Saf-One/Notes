@@ -18,7 +18,5 @@ desktop.ini
 *~.nib
 
 # Note processing files (not for public)
-.projectmetrics/
 input_notes.md
-note_processor_rules.md
 process_notes.md

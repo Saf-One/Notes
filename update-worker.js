@@ -71,6 +71,9 @@ self.addEventListener('message', event => {
     if (event.data && event.data.type === 'UPDATE_FILES') {
         console.log('Received update request for files:', event.data.files);
         updateFiles(event.data.files, event.data.repoUrl);
+    } else if (event.data && event.data.type === 'UPDATE_NAVIGATION') {
+        console.log('Received request to update navigation');
+        updateNavigation();
     }
 });
 
@@ -105,6 +108,9 @@ async function updateFiles(files, repoUrl) {
             }
         }
 
+        // After updating files, update navigation links
+        await updateNavigation();
+
         // Notify all clients that the update is complete
         const clients = await self.clients.matchAll();
         clients.forEach(client => {
@@ -114,5 +120,26 @@ async function updateFiles(files, repoUrl) {
         });
     } catch (error) {
         console.error('Error updating files:', error);
+    }
+}
+
+// Function to update navigation links across all documents
+async function updateNavigation() {
+    try {
+        console.log('Service worker updating navigation links');
+
+        // Get all clients (tabs/windows) controlled by this service worker
+        const clients = await self.clients.matchAll();
+
+        // Ask one of the clients to update navigation
+        if (clients.length > 0) {
+            clients[0].postMessage({
+                type: 'RUN_NAVIGATION_UPDATE'
+            });
+        }
+
+        console.log('Navigation update request sent to client');
+    } catch (error) {
+        console.error('Error during navigation update:', error);
     }
 }

@@ -11,6 +11,7 @@ Welcome to your centralized study notes repository. This home page provides navi
 
 ## Recently Updated
 
+- **[Navigation Links Management System](navigation_links_management.md)** - Documentation for the automated navigation system (May 6, 2024)
 - **[Spring Boot Framework](Spring%20Boot/Spring_Boot_Framework.md)** - Comprehensive overview of Spring Boot framework (May 6, 2024)
 - **[Java Cursors](Collection%20framework/Java_Cursors.md)** - Comprehensive guide to Java's collection traversal mechanisms (May 6, 2024)
 - **[Java Collections Framework](Collection%20framework/Java_Collections_Framework.md)** - Updated with Set, Array, Arrays, and Stack information (May 6, 2024)
@@ -22,7 +23,8 @@ This notes repository uses a standardized format to ensure consistency and easy 
 1. **Home Pages**: Each topic has its own home page with links to all documents in that topic
 2. **Navigation**: All pages include navigation links at the top and bottom
 3. **Structure**: Notes follow consistent formatting with clear sections and examples
-4. **Metrics**: Improvements are tracked in the `.projectmetrics` directory
+4. **Auto-Update**: Repository automatically checks for updates when users access the home page
+5. **Navigation Management**: Bidirectional links are automatically maintained between all documents
 
 ---
 
