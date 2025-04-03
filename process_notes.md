@@ -4,12 +4,12 @@
 
 1. **Add your raw notes** to the `input_notes.md` file below the divider line.
 
-2. **Ask Claude to process your notes** with one of these prompts:
-   - "Process my notes according to the rules"
-   - "Enhance my notes in input_notes.md"
-   - "Apply the note processor rules to my input"
+2. **Process your notes** with one of these steps:
+   - Run the note processor script
+   - Apply the note processor rules manually
+   - Use the automated formatter
 
-3. **Claude will automatically**:
+3. **The system will automatically**:
    - Read the rules from `note_processor_rules.md`
    - Identify the topic of your notes
    - Process your raw notes from `input_notes.md`

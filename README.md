@@ -58,8 +58,8 @@ When you push updates to the repository:
 To add new notes:
 
 1. Add your raw notes to the `input_notes.md` file
-2. Process them according to the rules in `note_processor_rules.md`
-3. The system will automatically format and enhance your notes and place them in the appropriate location
+2. Use the note processor to apply the formatting rules
+3. The system will automatically enhance your notes and place them in the appropriate location
 
 ## Future Plans
 
