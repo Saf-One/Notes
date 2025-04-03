@@ -1,5 +1,25 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.cursor
+.cursor
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~.nib
+
+# Note processing files (not for public)
 .projectmetrics/
 input_notes.md
 note_processor_rules.md
-process_notes.json
+process_notes.md
 Spring Boot/
