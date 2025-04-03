@@ -1,5 +1,10 @@
 @echo off
-echo Starting Notes Repository Launcher...
+echo Starting Notes Repository Viewer...
+
+REM Create utils directory if it doesn't exist
+if not exist utils mkdir utils
+
+REM Try Python launcher first
 python notes_launcher.py
 if %errorlevel% neq 0 (
     echo Python launcher failed, trying simple viewer...

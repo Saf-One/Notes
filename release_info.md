@@ -1,17 +1,17 @@
 # Release Title
-Notes Repository v1.1 - Python Launcher & Improved Navigation
+Notes Repository v1.1 - Simple Launcher & Improved Viewing Experience
 
 # Release Description
 ## Notes Repository: Comprehensive Study Guide
 
-This release provides a complete set of study notes on Java Collections Framework and Spring Boot, now with an enhanced Python-based launcher for better navigation and updates.
+This release provides a complete set of study notes on Java Collections Framework and Spring Boot, with a streamlined launcher for better viewing experience.
 
 ### What's Included
-- **Python Launcher Application**
-  - GUI interface for browsing notes
-  - Automatic update checking
-  - Direct links to install recommended extensions
-  - Works on Windows, macOS, and Linux
+- **Simple Python Launcher Application**
+  - Easy-to-use interface for opening your notes
+  - Release update checking
+  - Direct links to install recommended Markdown viewers
+  - One-click access to the main home page
 
 - **Java Collections Framework documentation**
   - Collection types, implementations, and behaviors
@@ -24,18 +24,17 @@ This release provides a complete set of study notes on Java Collections Framewor
   - Application startup process and annotations
 
 ### Features
-- **Multiple Launch Options**: GUI launcher, simple command-line, or direct HTML
-- **Hierarchical Navigation**: Main home page with links to topic-specific pages
+- **Simple Launch Options**: One-click batch files for Windows and shell scripts for macOS/Linux
+- **Clean Navigation**: Start at Home and navigate through topic links
 - **Consistent Formatting**: Standardized structure across all documents
-- **Auto-Update System**: Repository automatically checks for updates
-- **Mobile-Friendly**: Markdown format ensures compatibility across devices
+- **Update Notifications**: Automatically checks for new releases
+- **Markdown Optimized**: Designed to work with Markdown viewers for the best experience
 
 ### Installation
 1. Download and extract the ZIP file
 2. For Windows users: Double-click `Open_Notes.bat`
 3. For macOS/Linux users: Run `./open_notes.sh` in terminal
-4. Alternatively, use Python directly: `python notes_launcher.py`
-5. Follow the prompts to install a recommended Markdown viewer
+4. No installation needed - works right away!
 
 ### Coming Soon
 - Additional programming topics

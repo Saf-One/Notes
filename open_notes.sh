@@ -1,6 +1,11 @@
 #!/bin/bash
 
-echo "Starting Notes Repository Launcher..."
+echo "Starting Notes Repository Viewer..."
+
+# Create utils directory if it doesn't exist
+mkdir -p utils
+
+# Try Python launcher first
 python3 notes_launcher.py
 
 if [ $? -ne 0 ]; then

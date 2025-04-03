@@ -4,14 +4,15 @@ A comprehensive, organized collection of study notes on various technical topics
 
 ## Overview
 
-This repository contains structured study notes on various technical topics, organized in a hierarchical system with consistent formatting and navigation. The notes cover programming frameworks, libraries, and concepts.
+This repository contains structured study notes on programming frameworks, libraries, and concepts. The notes are organized in a hierarchical system with consistent formatting and navigation.
 
 ## Features
 
-- **Hierarchical Organization**: Main home page links to topic-specific home pages, which in turn link to detailed notes
+- **Simple Viewing Experience**: Easy-to-use Python launcher with one-click access
+- **Hierarchical Organization**: Main home page links to topic-specific home pages
 - **Consistent Formatting**: All notes follow standardized formatting for better readability
 - **Navigation System**: Each document includes consistent navigation links at the top and bottom
-- **Auto-Update System**: Repository automatically checks for updates when users access the home page
+- **Update Notifications**: The launcher checks for updates to ensure you have the latest content
 
 ## Topics Covered
 
@@ -29,16 +30,27 @@ This repository contains structured study notes on various technical topics, org
 
 ## How to Use
 
-1. Start at the [Home Page](Home.md) to navigate to specific topics
-2. Each topic has its own home page with links to all documents in that topic
-3. Use the navigation links at the top and bottom of each page to move between documents
+### Windows Users
+Double-click the `Open_Notes.bat` file to launch the viewer.
 
-## Auto-Update System
+### macOS/Linux Users
+Run `chmod +x open_notes.sh && ./open_notes.sh` in your terminal.
 
-This repository includes an automatic update system that keeps cloned repositories in sync with the main repository. Here's how it works:
+### Python Users (All Platforms)
+If you have Python installed, you can run:
+- `python notes_launcher.py` for the full experience
+- `python view_notes.py` for a simple command-line viewer
 
-1. When a user opens the Home page through `index.html`, the system checks for updates
-2. If updates are available, the user is prompted to update
-3. Upon confirmation, the system automatically pulls the latest versions of all files
-4. The page reloads with the updated content
+## Requirements
+
+- A modern web browser
+- For best experience: [Markdown Reader Extension](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg)
+- Optional: Python 3.6+ (if you want to use the enhanced launcher)
+
+## Future Plans
+
+1. Add more topics (Java Core, Design Patterns, Data Structures, etc.)
+2. Implement automatic cross-referencing between related topics
+3. Add diagrams and visualizations
+4. Develop a search functionality
 
