@@ -1,6 +1,6 @@
 # Notes Repository
 
-A comprehensive, organized collection of study notes with a smart processing system.
+A comprehensive, organized collection of study notes on various technical topics.
 
 ## Overview
 
@@ -9,10 +9,8 @@ This repository contains structured study notes on various technical topics, org
 ## Features
 
 - **Hierarchical Organization**: Main home page links to topic-specific home pages, which in turn link to detailed notes
-- **Consistent Formatting**: All notes follow standardized formatting rules for better readability
+- **Consistent Formatting**: All notes follow standardized formatting for better readability
 - **Navigation System**: Each document includes consistent navigation links at the top and bottom
-- **Automated Processing**: New notes can be automatically formatted and enhanced using the note processing system
-- **Metrics Tracking**: Improvements are tracked in the .projectmetrics directory
 - **Auto-Update System**: Repository automatically checks for updates when users access the home page
 
 ## Topics Covered
@@ -45,21 +43,6 @@ To set up the auto-update system in your cloned repository:
 1. Serve the repository through a local web server (required for service workers)
 2. Open the repository using the `index.html` file rather than directly accessing the markdown files
 3. Updates will be checked automatically every 24 hours
-
-### For Repository Owners
-
-When you push updates to the repository:
-
-1. Users will be notified of available updates the next time they access the home page
-2. No additional action is required
-
-## Contributing
-
-To add new notes:
-
-1. Add your raw notes to the `input_notes.md` file
-2. Use the note processor to apply the formatting rules
-3. The system will automatically enhance your notes and place them in the appropriate location
 
 ## Future Plans
 
