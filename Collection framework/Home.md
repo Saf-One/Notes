@@ -16,8 +16,8 @@ The Java Collections Framework provides a unified architecture for representing 
 
 | Document | Description | Last Updated |
 |----------|-------------|--------------|
-| [Java Collections Framework](Java_Collections_Framework.md) | Comprehensive overview of Java collections including List implementations, Set interfaces, and utility classes | May 6, 2024 |
-| [Java Cursors](Java_Cursors.md) | Detailed explanation of Java's cursor mechanisms for traversing collections, including Enumeration, Iterator, and ListIterator | May 6, 2024 |
+| [Java Collections Framework](Java_Collections_Framework.md) | Comprehensive overview of Java collections including List implementations, Set interfaces, and utility classes | March 3, 2025 |
+| [Java Cursors](Java_Cursors.md) | Detailed explanation of Java's cursor mechanisms for traversing collections, including Enumeration, Iterator, and ListIterator | March 3, 2025 |
 
 ## Java Collections Framework
 
