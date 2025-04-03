@@ -23,3 +23,7 @@ input_notes.md
 note_processor_rules.md
 process_notes.md
 navigation_links_management.md
+
+# Version tracking
+.version
+.notes_config.json

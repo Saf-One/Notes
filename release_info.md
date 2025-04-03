@@ -1,12 +1,18 @@
 # Release Title
-Notes Repository v1.0 - Java Collections & Spring Boot Documentation
+Notes Repository v1.1 - Python Launcher & Improved Navigation
 
 # Release Description
 ## Notes Repository: Comprehensive Study Guide
 
-This release provides a complete set of study notes on Java Collections Framework and Spring Boot, organized in a hierarchical structure with consistent formatting and navigation.
+This release provides a complete set of study notes on Java Collections Framework and Spring Boot, now with an enhanced Python-based launcher for better navigation and updates.
 
 ### What's Included
+- **Python Launcher Application**
+  - GUI interface for browsing notes
+  - Automatic update checking
+  - Direct links to install recommended extensions
+  - Works on Windows, macOS, and Linux
+
 - **Java Collections Framework documentation**
   - Collection types, implementations, and behaviors
   - Detailed explanation of Java Cursors (Iterators)
@@ -18,6 +24,7 @@ This release provides a complete set of study notes on Java Collections Framewor
   - Application startup process and annotations
 
 ### Features
+- **Multiple Launch Options**: GUI launcher, simple command-line, or direct HTML
 - **Hierarchical Navigation**: Main home page with links to topic-specific pages
 - **Consistent Formatting**: Standardized structure across all documents
 - **Auto-Update System**: Repository automatically checks for updates
@@ -25,12 +32,14 @@ This release provides a complete set of study notes on Java Collections Framewor
 
 ### Installation
 1. Download and extract the ZIP file
-2. Open `index.html` in your browser to access the home page
-3. The auto-update system will keep your notes in sync with future updates
+2. For Windows users: Double-click `Open_Notes.bat`
+3. For macOS/Linux users: Run `./open_notes.sh` in terminal
+4. Alternatively, use Python directly: `python notes_launcher.py`
+5. Follow the prompts to install a recommended Markdown viewer
 
 ### Coming Soon
 - Additional programming topics
 - Enhanced diagrams and visualizations
 - Cross-referenced content across topics
 
-*Last Updated: March 3, 2025* 
+*Last Updated: May 6, 2024* 
