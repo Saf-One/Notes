@@ -94,86 +94,98 @@
             border-left: solid 4px #0366d6;
             border-radius: 3px;
         }
+        
+        .topic-card {
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
+        
+        .topic-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .topic-card h3 {
+            margin-top: 0;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #0366d6;
+            color: white;
+            border-radius: 3px;
+            text-decoration: none;
+            margin-top: 8px;
+        }
+        
+        .button:hover {
+            background-color: #0256b9;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="content">
-        <!-- Content will be loaded here from Home.md -->
-        <div class="loading">Loading...</div>
+        <h1>Study Notes Home</h1>
+
+        <p>Welcome to your centralized study notes repository. This home page provides navigation to all topic areas and their detailed notes.</p>
+
+        <h2>Topics</h2>
+
+        <div class="topic-card">
+            <h3>Java Collections Framework</h3>
+            <p>Notes on Java's collections, implementations, and traversal mechanisms</p>
+            <a href="Collection framework/Home.md" class="button">View Topic</a>
+        </div>
+
+        <div class="topic-card">
+            <h3>Spring Boot</h3>
+            <p>Notes on Spring Boot framework, features, and development techniques</p>
+            <a href="Spring Boot/Home.md" class="button">View Topic</a>
+        </div>
+
+        <h2>Recently Updated</h2>
+        <ul>
+            <li><strong><a href="Spring Boot/Spring_Boot_Framework.md">Spring Boot Framework</a></strong> - Comprehensive overview of Spring Boot framework (May 6, 2024)</li>
+            <li><strong><a href="Collection framework/Java_Cursors.md">Java Cursors</a></strong> - Comprehensive guide to Java's collection traversal mechanisms (May 6, 2024)</li>
+            <li><strong><a href="Collection framework/Java_Collections_Framework.md">Java Collections Framework</a></strong> - Updated with Set, Array, Arrays, and Stack information (May 6, 2024)</li>
+        </ul>
+
+        <h2>Using This Repository</h2>
+        <p>This notes repository uses a standardized format to ensure consistency and easy navigation:</p>
+        <ol>
+            <li><strong>Home Pages</strong>: Each topic has its own home page with links to all documents in that topic</li>
+            <li><strong>Navigation</strong>: All pages include navigation links at the top and bottom</li>
+            <li><strong>Structure</strong>: Notes follow consistent formatting with clear sections and examples</li>
+            <li><strong>Auto-Update</strong>: Repository automatically checks for updates when accessed on a web server</li>
+        </ol>
+
+        <div class="update-info">
+            <p><strong>Note:</strong> If you're viewing this file directly from your file system, Markdown files will open as plain text. For the best experience:</p>
+            <ol>
+                <li>Use a Markdown viewer extension in your browser</li>
+                <li>Or open the individual markdown files in an editor that supports Markdown previews (VS Code, etc.)</li>
+            </ol>
+        </div>
     </div>
 
     <footer>
-        &copy; 2024 Notes Repository - <a href="https://github.com/Saf-One/Notes" target="_blank">GitHub</a> - Last updated: <span id="last-update"></span>
+        &copy; 2024 Notes Repository - <a href="https://github.com/Saf-One/Notes" target="_blank">GitHub</a> - Last updated: May 6, 2024
     </footer>
 
     <script>
-        // Function to fetch and render markdown
-        async function loadContent() {
-            try {
-                const response = await fetch('Home.md');
-                if (!response.ok) {
-                    throw new Error(`Failed to load content: ${response.status}`);
-                }
-
-                const text = await response.text();
-
-                // This is a simple markdown to HTML converter
-                // In a real application, you'd use a proper markdown library
-                const html = convertMarkdownToHTML(text);
-
-                document.getElementById('content').innerHTML = html;
-
-                // Update last updated timestamp
-                const now = new Date();
-                document.getElementById('last-update').textContent = now.toLocaleDateString();
-            } catch (error) {
-                console.error('Error loading content:', error);
-                document.getElementById('content').innerHTML = `
-                    <div class="update-info">
-                        <p>Error loading content: ${error.message}</p>
-                        <p>Please check your connection and try again.</p>
-                    </div>
-                `;
-            }
+        // Check if we're running on a web server (not as a local file)
+        if (window.location.protocol.startsWith('http')) {
+            // Load the auto-update script only when running on a server
+            const script = document.createElement('script');
+            script.src = 'auto_update.js';
+            document.body.appendChild(script);
         }
-
-        // Simple markdown to HTML converter
-        function convertMarkdownToHTML(markdown) {
-            // Headers
-            markdown = markdown.replace(/^# (.*$)/gm, '<h1>$1</h1>');
-            markdown = markdown.replace(/^## (.*$)/gm, '<h2>$1</h2>');
-            markdown = markdown.replace(/^### (.*$)/gm, '<h3>$1</h3>');
-
-            // Links
-            markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-
-            // Bold
-            markdown = markdown.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-
-            // Italic
-            markdown = markdown.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-
-            // Lists
-            markdown = markdown.replace(/^\s*-\s*(.*)/gm, '<li>$1</li>');
-            markdown = markdown.replace(/<li>(.*)<\/li>/g, '<ul><li>$1</li></ul>');
-            markdown = markdown.replace(/<\/ul>\s*<ul>/g, '');
-
-            // Paragraphs
-            markdown = markdown.replace(/^(?!<[hou]).+$/gm, '<p>$&</p>');
-
-            // Clean up extra paragraphs
-            markdown = markdown.replace(/<p><\/p>/g, '');
-
-            return markdown;
-        }
-
-        // Call the function when page loads
-        document.addEventListener('DOMContentLoaded', loadContent);
     </script>
-
-    <!-- Auto-update script -->
-    <script src="auto_update.js"></script>
 </body>
 
 </html>
