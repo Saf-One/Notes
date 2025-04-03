@@ -7,9 +7,11 @@ Welcome to your centralized study notes repository. This home page provides navi
 | Topic | Description | Documents | Last Updated |
 |-------|-------------|-----------|-------------|
 | [Java Collections Framework](Collection%20framework/Home.md) | Notes on Java's collections, implementations, and traversal mechanisms | 2 | May 6, 2024 |
+| [Spring Boot](Spring%20Boot/Home.md) | Notes on Spring Boot framework, features, and development techniques | 1 | May 6, 2024 |
 
 ## Recently Updated
 
+- **[Spring Boot Framework](Spring%20Boot/Spring_Boot_Framework.md)** - Comprehensive overview of Spring Boot framework (May 6, 2024)
 - **[Java Cursors](Collection%20framework/Java_Cursors.md)** - Comprehensive guide to Java's collection traversal mechanisms (May 6, 2024)
 - **[Java Collections Framework](Collection%20framework/Java_Collections_Framework.md)** - Updated with Set, Array, Arrays, and Stack information (May 6, 2024)
 
