@@ -1,20 +1,26 @@
 # Notes Repository
 
-A comprehensive, organized collection of study notes on various technical topics.
+A comprehensive collection of programming study notes with a simple launcher.
 
-## Overview
+## Quick Start Guide
 
-This repository contains structured study notes on programming frameworks, libraries, and concepts. The notes are organized in a hierarchical system with consistent formatting and navigation.
+### Windows Users
+**Double-click the `Open_Notes.bat` file** to launch the notes viewer.
 
-## Features
+### macOS/Linux Users
+1. Open Terminal
+2. Navigate to the repository directory
+3. Run: `chmod +x open_notes.sh && ./open_notes.sh`
 
-- **Simple Viewing Experience**: Easy-to-use Python launcher with one-click access
-- **Hierarchical Organization**: Main home page links to topic-specific home pages
-- **Consistent Formatting**: All notes follow standardized formatting for better readability
-- **Navigation System**: Each document includes consistent navigation links at the top and bottom
-- **Update Notifications**: The launcher checks for updates to ensure you have the latest content
+### Python Users (All Platforms)
+If you have Python 3.6+ installed:
+- Run `python notes_launcher.py` for the launcher
+- Or `python view_notes.py` for a simple viewer
 
-## Topics Covered
+## For Best Viewing Experience
+Install the [Markdown Reader Extension](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg) for your browser.
+
+## Topics Included
 
 - **Java Collections Framework**
   - List implementations (ArrayList, LinkedList, Vector, Stack)
@@ -28,29 +34,41 @@ This repository contains structured study notes on programming frameworks, libra
   - Application architecture
   - Comparison with traditional Spring
 
-## How to Use
+## Features
 
-### Windows Users
-Double-click the `Open_Notes.bat` file to launch the viewer.
+- **Simple Viewing Experience**: Easy-to-use launcher
+- **Hierarchical Organization**: Main home page links to topic-specific home pages
+- **Consistent Formatting**: All notes follow standardized structure
+- **Navigation Links**: Each document includes navigation aids
+- **Update Notifications**: The launcher checks for updates
 
-### macOS/Linux Users
-Run `chmod +x open_notes.sh && ./open_notes.sh` in your terminal.
+## Repository Overview
 
-### Python Users (All Platforms)
-If you have Python installed, you can run:
-- `python notes_launcher.py` for the full experience
-- `python view_notes.py` for a simple command-line viewer
+This repository contains structured study notes on programming frameworks, libraries, and concepts. The notes are organized in a hierarchical system with consistent formatting and navigation.
+
+Each topic has its own home page that links to specific documents. The navigation structure is:
+
+```
+Home.md  →  [Topic]/Home.md  →  [Topic]/Specific_Document.md
+```
+
+## Updating
+
+The launcher will check for updates and notify you when a new version is available. To update:
+
+1. Click "Check for Updates" in the launcher
+2. If updates are available, you'll be directed to download the latest release
+3. Download and extract the new version to replace your current files
 
 ## Requirements
 
-- A modern web browser
-- For best experience: [Markdown Reader Extension](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg)
-- Optional: Python 3.6+ (if you want to use the enhanced launcher)
+- A modern web browser (Chrome, Firefox, Edge, Safari)
+- Optional: Python 3.6+ (for enhanced launcher features)
 
 ## Future Plans
 
-1. Add more topics (Java Core, Design Patterns, Data Structures, etc.)
-2. Implement automatic cross-referencing between related topics
+1. Add more programming topics
+2. Implement cross-referencing between related topics 
 3. Add diagrams and visualizations
 4. Develop a search functionality
 
